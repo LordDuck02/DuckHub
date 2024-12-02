@@ -1,10 +1,10 @@
 local id = game.PlaceId
-local repo = 'https://raw.githubusercontent.com/LordDuck02/DuckHub/games/'..id..'/script.lua'
+local repo = 'https://raw.githubusercontent.com/LordDuck02/DuckHub/main/games/'..id..'/script.lua'
 
 local function notify(h, t)
     pcall(function()
         game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = h,
+Title = h,
             Text = t
         })
     end)
