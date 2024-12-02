@@ -118,6 +118,7 @@ end
 
 local function updplrs()
     for _, player in ipairs(plrs:GetPlayers()) do
+        if player == lp then return end
         if player.Character and player.Character:FindFirstChild("Head") then
             cESP(player)
         end
