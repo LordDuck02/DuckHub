@@ -1,11 +1,13 @@
 local id = game.PlaceId
-local repo = 'https://raw.githubusercontent.com/lordduck02/DuckHub/games/'..id..'/script.lua'
+local repo = 'https://raw.githubusercontent.com/LordDuck02/DuckHub/refs/heads/main/games/'..id..'/script.lua'
 
 local function notify(h, t)
-    game:GetService("StarterGui"):SetCore("SendNotification",{
-        Title = h,
-        Text = t
-    })
+    pcall(function()
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = h,
+            Text = t
+        })
+    end)
 end
 
 local s, f = pcall(function()
@@ -13,5 +15,5 @@ local s, f = pcall(function()
 end)
 
 if not s then
-    notify("Duck hub - Error", "Game not supported")
+    notify("Duck Hub - Error", "Game not supported or script loading failed.")
 end
