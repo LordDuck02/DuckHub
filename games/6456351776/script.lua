@@ -198,7 +198,7 @@ local function monitorNewItems()
             if spotFolder then
                 spotFolder.ChildAdded:Connect(function(newItem)
                     addUI(newItem)
-                    local hg = Instance.new("Highlight", item.Parent)
+                    local hg = Instance.new("Highlight", newItem)
                     hg.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
                     hg.FillColor = Color3.fromRGB(0, 0, 255)
                     hg.FillTransparency = 0.5
@@ -512,16 +512,17 @@ mainleftgroupbox:AddToggle('kyms', {
 
 local autoescape = false
 
-local function huh()
-    lp.Character.ChildAdded:Connect(function(c)
-        if c:IsA("Weld") and c.Name == "GrabWeld" then 
-            for i=1, 10 do 
-                escapremote:FireServer()
-                wait(.1)
-            end
+
+lp.Character.ChildAdded:Connect(function(c)
+    if not autoescape then return end
+    if c:IsA("Weld") and c.Name == "GrabWeld" then 
+        for i=1, 10 do 
+            escapremote:FireServer()
+            wait(.1)
         end
-    end)
-end
+    end
+end)
+
 
 mainleftgroupbox:AddToggle('autoescape', {
     Text = 'Auto escape',
@@ -529,7 +530,7 @@ mainleftgroupbox:AddToggle('autoescape', {
     Tooltip = 'Spams the escape thingy for you ! :3', 
 
     Callback = function(Value)
-        huh()
+        autoescape = Value
     end
 })
 
