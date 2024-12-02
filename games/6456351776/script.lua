@@ -521,7 +521,8 @@ lp.Character.ChildAdded:Connect(function(c)
     if c:IsA("Weld") and c.Name == "GrabWeld" then 
         for i=1, 15 do 
             escapremote:FireServer()
-            virtualUser:ClickButton(Vector2.new(0, 0))
+            virtualUser:CaptureController() 
+            virtualUser:ClickMouseButton(1) 
         end
     end
 end)
