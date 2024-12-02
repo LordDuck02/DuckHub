@@ -56,7 +56,7 @@ end
 
 function cESP(player)
     if player == lp then return end
-    local character = player.Character or player.CharacterAdded:Wait()
+    local character = char
     local chamsContainer = character:FindFirstChild("Chams")
     if chamsContainer and not esptg then chamsContainer:Destroy() end
 
@@ -81,7 +81,7 @@ function cESP(player)
             end
         end
 
-        local head = character:FindFirstChild("Head")
+        local head = character:WaitForChild("Head")
         if head then
             local espFrame = head:FindFirstChild("ESP_" .. player.UserId)
             if not espFrame then
@@ -520,7 +520,7 @@ lp.Character.ChildAdded:Connect(function(c)
     if c:IsA("Weld") and c.Name == "GrabWeld" then 
         for i=1, 15 do 
             escapremote:FireServer()
-            virtualUser:ClickButton(Vector2.new(100, 100))
+            virtualUser:ClickButton(Vector2.new(0, 0))
         end
     end
 end)
