@@ -518,7 +518,6 @@ lp.Character.ChildAdded:Connect(function(c)
     if c:IsA("Weld") and c.Name == "GrabWeld" then 
         for i=1, 10 do 
             escapremote:FireServer()
-            wait(.1)
         end
     end
 end)
