@@ -518,7 +518,7 @@ local virtualUser = game:GetService("VirtualUser")
 lp.Character.ChildAdded:Connect(function(c)
     if not autoescape then return end
     if c:IsA("Weld") and c.Name == "GrabWeld" then 
-        for i=1, 10 do 
+        for i=1, 15 do 
             escapremote:FireServer()
             virtualUser:ClickButton(Vector2.new(100, 100))
         end
