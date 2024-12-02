@@ -7,7 +7,7 @@ Duckhub is more of a personal project, with the objective of Anti-Cheat bypassin
 
 # 🧾Loader
 ```lua
-print("Placeholder")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LordDuck02/DuckHub/refs/heads/main/loader.lua"))()
 ```
 
 # 💾 Discord server
